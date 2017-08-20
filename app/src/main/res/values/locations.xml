@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="locations">
+
+        <item>İstanbul</item>
+        <item>Ankara</item>
+        <item>İzmir</item>
+        <item>Adana</item>
+        <item>Bursa</item>
+        <item>Mersin</item>
+        <item>Tokat</item>
+        <item>Sivas</item>
+        <item>Uşak</item>
+        <item>İzmit</item>
+        <item>Kayseri</item>
+        <item>Çanakkale</item>
+        <item>Denizli</item>
+        <item>Elazığ</item>
+        <item>Kırıkkale</item>
+        <item>Kırklareli</item>
+        <item>Edirne</item>
+        <item>Burdur</item>
+        <item>Hatay</item>
+        <item>Kahramanmaraş</item>
+        <item>Gaziantep</item>
+        <item>Ağrı</item>
+
+
+    </string-array>
+
+
+</resources>

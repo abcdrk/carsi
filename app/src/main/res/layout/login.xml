@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/ivDealx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_deal"
+        android:layout_weight="0.35" />
+
+    <ImageView
+        android:id="@+id/ivLogox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.08"
+        android:src="@drawable/ic_logo" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.08" />
+
+    <EditText
+        android:id="@+id/etUserNamex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.04"
+        android:paddingLeft="10dp"
+        android:minEms="1"
+        android:maxEms="16"
+        android:textColor="@color/colorText"
+        android:textColorHint="@color/colorText"
+        android:textStyle="bold"
+        android:inputType="textPersonName"
+        android:hint="@string/user_name"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:backgroundTint="@color/colorText" />
+
+
+    <EditText
+        android:id="@+id/etPasswordx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.04"
+        android:paddingLeft="10dp"
+        android:minEms="6"
+        android:maxEms="16"
+        android:textColor="@color/colorText"
+        android:textColorHint="@color/colorText"
+        android:textStyle="bold"
+        android:inputType="textPassword"
+        android:hint="@string/password"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:backgroundTint="@color/colorText"/>
+
+    <TextView
+        android:id="@+id/tvforgotPasswordx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/forgotPassword"
+        android:textColorLink="@color/colorWhite"
+        android:autoLink="web"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"
+        android:linksClickable="true"
+        android:gravity="right"
+        android:paddingRight="30dp"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.15" />
+
+    <Button
+        android:id="@+id/btnLoginx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0.01"
+        android:background="@drawable/btn_login"
+        android:text="@string/login"
+        android:textColor="@color/colorText"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textAllCaps="false"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.03" />
+
+    <Button
+        android:id="@+id/btnFacebookx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.01"
+        android:background="@drawable/btn_facebook"
+        android:text="@string/loginFacebook"
+        android:textColor="@color/colorText"
+        android:textSize="20sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textAllCaps="false"/>
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.01" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/tvcreateAccountLinkx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dontHaveAccount"
+            android:layout_centerInParent="true"
+            android:textColor="@color/colorText"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/btnCreateAccountx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/createAccount"
+            android:textAllCaps="false"
+            android:background="@null"
+            android:paddingLeft="8dp"
+            android:textColor="@color/colorLink"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

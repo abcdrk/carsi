@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Çarşı</string>
+
+    <string name="upload_photo">Fotoğraf Yükle</string>
+    <string name="upload_photo_expl">Bu senin profil fotoğrafın olacak.</string>
+    <string name="sign_up_name">İsim Soyisim veya Şirket Adı</string>
+    <string name="e_mail">E-mail</string>
+    <string name="username">Kullanıcı Adı</string>
+    <string name="password">Parola</string>
+    <string name="password_again">Parola (Tekrar)</string>
+    <string name="create_account">Hesap Oluştur</string>
+
+    <string name="terms_of_service">
+        Hesap oluşturarak \"
+        <a href="http://www.google.com">Kullanıcı Sözleşmesi</a>
+        \"ni kabul etmiş olursunuz.
+    </string>
+    <string name="user_name">Kullanıcı Adı</string>
+    <string name="login">Giriş</string>
+    <string name="loginFacebook">Facebook ile Giriş</string>
+    <string name="forgotPassword"><a href="www.google.com">"Şİfremi unuttum"</a></string>
+
+    <string name="dontHaveAccount">Hesabınız mı yok?</string>
+    <string name="createAccount">Hesap oluştur!</string>
+
+    <string name="eleman">Eleman</string>
+    <string name="urun">Ürün</string>
+    <string name="nakliye">Nakliye</string>
+    <string name="depo">Depo</string>
+
+
+    <string name="header_eleman">Eleman / İş </string>
+    <string name="header_depo">Depo</string>
+    <string name="header_urun">Ürün</string>
+    <string name="header_nakliye">Nakliye</string>
+
+
+    <string name="back">Geri</string>
+    <string name="subjectExplanation1">Çalışmakta olduğunuz</string>
+    <string name="subjectExplanation2">veya</string>
+    <string name="subjectExplanation3">çalışmak istediğiniz</string>
+    <string name="subjectExplanation4">alanları seçin.</string>
+    <string name="locationExplanation1">Bulunduğunuz konumu seçin,</string>
+    <string name="locationExplanation2">etrafınızdaki</string>
+    <string name="locationExplanation3">iş fırsatlarını kaçırmayın!</string>
+    <string name="finish">Bitir</string>
+    <string name="textile">Tekstil</string>
+    <string name="istanbul">İstanbul</string>
+
+
+
+
+
+
+
+</resources>

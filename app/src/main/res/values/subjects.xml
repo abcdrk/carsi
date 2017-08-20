@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="subjects">
+
+        <item>Nakliye</item>
+        <item>Depo</item>
+        <item>Tekstil</item>
+        <item>Pet Shop</item>
+        <item>Gıda</item>
+        <item>İnşaat</item>
+        <item>Züccaciye</item>
+        <item>Mobilya</item>
+        <item>Elektronik</item>
+        <item>Kuyumcu</item>
+
+    </string-array>
+
+
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_eleman"
+        android:enabled="true"
+        android:icon="@drawable/ic_action_eleman"
+        android:title="@string/eleman"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_urun"
+        android:enabled="true"
+        android:icon="@drawable/ic_action_urun"
+        android:title="@string/urun"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_nakliye"
+        android:enabled="true"
+        android:icon="@drawable/ic_action_nakliye"
+        android:title="@string/nakliye"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_depo"
+        android:enabled="true"
+        android:icon="@drawable/ic_action_depo"
+        android:title="@string/depo"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_profile"
+        android:enabled="true"
+        android:icon="@drawable/ic_action_profile"
+        android:title="@string/user_name"
+        app:showAsAction="ifRoom" />
+
+</menu>

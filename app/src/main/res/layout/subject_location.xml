@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:weightSum="1">
+
+
+    <Button
+        android:id="@+id/btnBackx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:textSize="25sp"
+        android:drawableLeft="@drawable/ic_left_arrow"
+        android:text="@string/back"
+        android:background="@android:color/transparent"
+        android:textColor="@color/colorText"
+        android:textAllCaps="false" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.10"/>
+
+    <TextView
+        android:id="@+id/tvSubjectx1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="23sp"
+        android:textColor="@color/colorText"
+        android:gravity="center"
+        android:text="@string/subjectExplanation1" />
+
+    <TextView
+        android:id="@+id/tvSubjectx2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="23sp"
+        android:textColor="@color/colorText"
+        android:gravity="center"
+        android:text="@string/subjectExplanation2" />
+
+    <TextView
+        android:id="@+id/tvSubjectx3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="23sp"
+        android:textColor="@color/colorText"
+        android:gravity="center"
+        android:text="@string/subjectExplanation3" />
+
+    <TextView
+        android:id="@+id/tvSubjectx4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="23sp"
+        android:textColor="@color/colorText"
+        android:gravity="center"
+        android:text="@string/subjectExplanation4" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.10"/>
+
+
+    <io.apptik.widget.multiselectspinner.MultiSelectSpinner
+        android:id="@+id/spSubjectx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal"
+        android:drawSelectorOnTop="true"
+        android:layout_marginRight="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_weight="0.21"
+        android:background="@drawable/spinner_select"
+        />
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.10"/>
+
+    <TextView
+        android:id="@+id/tvLocationx1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/locationExplanation1"
+        android:gravity="center"
+        android:textSize="23sp"
+        android:textColor="@color/colorText"
+        />
+
+    <TextView
+        android:id="@+id/tvLocationx2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/locationExplanation2"
+        android:textSize="23sp"
+        android:gravity="center"
+        android:textColor="@color/colorText" />
+
+    <TextView
+        android:id="@+id/tvLocationx3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/locationExplanation3"
+        android:textSize="23sp"
+        android:gravity="center"
+        android:textColor="@color/colorText" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.10"/>
+
+
+    <io.apptik.widget.multiselectspinner.MultiSelectSpinner
+        android:id="@+id/spLocationx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal"
+        android:drawSelectorOnTop="true"
+        android:layout_marginRight="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_weight="0.21"
+        android:background="@drawable/spinner_select"
+        />
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.13"/>
+
+    <Button
+        android:id="@+id/btnFinishx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/finish"
+        android:textSize="29sp"
+        android:background="@android:color/transparent"
+        android:textColor="@color/colorText"
+        android:textAllCaps="false"
+        android:layout_gravity="right"
+        android:drawableRight="@drawable/ic_right_arrow"
+        android:paddingLeft="20dp"
+        />
+
+
+
+</LinearLayout>
