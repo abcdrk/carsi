@@ -27,6 +27,8 @@
     <string name="urun">Ürün</string>
     <string name="nakliye">Nakliye</string>
     <string name="depo">Depo</string>
+    <string name="profile">Profil</string>
+
 
 
     <string name="header_eleman">Eleman / İş </string>
@@ -46,10 +48,6 @@
     <string name="finish">Bitir</string>
     <string name="textile">Tekstil</string>
     <string name="istanbul">İstanbul</string>
-
-
-
-
 
 
 

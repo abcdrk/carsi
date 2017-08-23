@@ -17,6 +17,7 @@ import android.widget.TextView;
  */
 
 public class LoginActivity extends Activity{
+
     Button btnLogin;
     Button btnCreateAccount;
     EditText etUserName;
@@ -29,6 +30,7 @@ public class LoginActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+
         etUserName = findViewById(R.id.etUserNamex);
         etPassword = findViewById(R.id.etPasswordx);
         ivDeal = findViewById(R.id.ivDealx);

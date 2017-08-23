@@ -150,6 +150,7 @@
 
 
     <Button
+        android:id="@+id/btnCreateAccountDonex"
         android:text="@string/create_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -2,6 +2,8 @@ package com.example.dilrubareyyan.carsi;
 
 
 import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -34,6 +36,8 @@ public class SubjectLocationActivity extends Activity {
     protected void onCreate(Bundle subjectSpinnerBundle) {
         super.onCreate(subjectSpinnerBundle);
         setContentView(R.layout.subject_location);
+
+
 
 
         // Subject Spinner
@@ -128,6 +132,30 @@ public class SubjectLocationActivity extends Activity {
                 .selectItem(2, false)
                 .setMinSelectedItems(1)
                 .setAllUncheckedText("Bir veya birden fazla konum seçebilirsiniz.");
+
+
+
+        Button btnFinish = (Button) findViewById(R.id.btnFinishx);
+        Button btnBack = (Button) findViewById(R.id.btnBackx);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent goBack = new Intent(SubjectLocationActivity.this, SignUp.class);
+                startActivity(goBack);
+            }
+        });
+
+        btnFinish.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent finish = new Intent(SubjectLocationActivity.this, MainPageActivity.class);
+                startActivity(finish);
+            }
+        });
+
 
 
     }
