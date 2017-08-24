@@ -3,18 +3,12 @@ package com.example.dilrubareyyan.carsi;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -37,16 +31,36 @@ public class SubjectLocationActivity extends Activity {
         super.onCreate(subjectSpinnerBundle);
         setContentView(R.layout.subject_location);
 
+        Button btnFinish = (Button) findViewById(R.id.btnFinishx);
+        Button btnBack = (Button) findViewById(R.id.btnBackx);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent goBack = new Intent(SubjectLocationActivity.this, SignUpActivity.class);
+                startActivity(goBack);
+            }
+        });
+
+        btnFinish.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent finish = new Intent(SubjectLocationActivity.this, MainPageActivity.class);
+                startActivity(finish);
+            }
+        });
 
 
+        /**
+         * Multispinner of Subjects is handled here.
+         */
 
-        // Subject Spinner
+        //addItemsToSubjectSpinner();
+        //addListenerToSubjectSpinner();
 
-        addItemsToSubjectSpinner();
-
-        addListenerToSubjectSpinner();
-
-        //The array of subjects
+        // The contents of Subjects are added here to the array to be displayed.
         ArrayList<String> options = new ArrayList<>();
         options.add("Tekstil");
         options.add("Depo");
@@ -60,17 +74,13 @@ public class SubjectLocationActivity extends Activity {
         options.add("Eczane");
 
 
-
         MultiSelectSpinner multiSelectSpinner = (MultiSelectSpinner) findViewById(R.id.spSubjectx);
-
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, options);
-
-        multiSelectSpinner.setPrompt("@string/selectSubject");
-
+        // The default text displayed on the Subject Spinner.
+        //multiSelectSpinner.setPrompt("@string/selectSubject");
 
         multiSelectSpinner
                 .setListAdapter(adapter)
-
                 .setListener(new MultiSelectSpinner.MultiSpinnerListener() {
                     @Override
                     public void onItemsSelected(boolean[] selected) {
@@ -87,15 +97,14 @@ public class SubjectLocationActivity extends Activity {
 
 
 
+        /**
+        * Multispinner of Locations is handled here.
+        */
 
-        // Location Spinner
+        //addItemsToLocationSpinner();
+        //addListenerToLocationSpinner();
 
-
-        addItemsToLocationSpinner();
-
-        addListenerToLocationSpinner();
-
-        // The array of locations
+        // The contents of Locations are added here to the array to be displayed.
         ArrayList<String> options2 = new ArrayList<>();
         options2.add("İstanbul");
         options2.add("Ankara");
@@ -110,11 +119,7 @@ public class SubjectLocationActivity extends Activity {
 
 
         MultiSelectSpinner multiSelectSpinner2 = (MultiSelectSpinner) findViewById(R.id.spLocationx);
-
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, options2);
-
-        multiSelectSpinner2.setPrompt("@string/selectLocation");
-
 
         multiSelectSpinner2
                 .setListAdapter(adapter2)
@@ -133,98 +138,80 @@ public class SubjectLocationActivity extends Activity {
                 .setMinSelectedItems(1)
                 .setAllUncheckedText("Bir veya birden fazla konum seçebilirsiniz.");
 
-
-
-        Button btnFinish = (Button) findViewById(R.id.btnFinishx);
-        Button btnBack = (Button) findViewById(R.id.btnBackx);
-
-        btnBack.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent goBack = new Intent(SubjectLocationActivity.this, SignUp.class);
-                startActivity(goBack);
-            }
-        });
-
-        btnFinish.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent finish = new Intent(SubjectLocationActivity.this, MainPageActivity.class);
-                startActivity(finish);
-            }
-        });
-
-
-
     }
 
+    // *********************************************************************************************
+    // ISLEVSIZLIK STARTS HERE
+    // ARRAY OLARAK CEKMEK ISTERSEM BASKA BIR DOSYADAN KULLANILABILIR FAKAT SUAN ISLEVSIZ.
+    // *********************************************************************************************
+//    public void addItemsToSubjectSpinner() {
+//
+//        subjectSpinner = (Spinner) findViewById(R.id.spSubjectx);
+//
+//        ArrayAdapter<CharSequence> subjectSpinnerAdapter = ArrayAdapter.createFromResource(this,
+//                R.array.subjects,
+//                android.R.layout.simple_spinner_item);
+//
+//        subjectSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//
+//        subjectSpinner.setAdapter(subjectSpinnerAdapter);
+//
+//    }
+//
+//    public void addListenerToSubjectSpinner() {
+//
+//        subjectSpinner = (Spinner) findViewById(R.id.spSubjectx);
+//
+//        subjectSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+//                String itemSelectedInSpinner = parent.getItemAtPosition(pos).toString();
+//
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
+//
+//
+//    }
+//
+//    public void addItemsToLocationSpinner() {
+//
+//        locationSpinner = (Spinner) findViewById(R.id.spLocationx);
+//
+//        ArrayAdapter<CharSequence> locationSpinnerAdapter = ArrayAdapter.createFromResource(this,
+//                R.array.locations,
+//                android.R.layout.simple_spinner_item);
+//
+//        locationSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        locationSpinner.setAdapter(locationSpinnerAdapter);
+//
+//    }
+//
+//    public void addListenerToLocationSpinner() {
+//
+//        locationSpinner = (Spinner) findViewById(R.id.spLocationx);
+//
+//        locationSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+//                String itemSelectedInSpinner = parent.getItemAtPosition(pos).toString();
+//
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
+//
+//
+//    }
 
-    public void addItemsToSubjectSpinner() {
-
-        subjectSpinner = (Spinner) findViewById(R.id.spSubjectx);
-
-        ArrayAdapter<CharSequence> subjectSpinnerAdapter = ArrayAdapter.createFromResource(this,
-                R.array.subjects,
-                android.R.layout.simple_spinner_item);
-
-        subjectSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        subjectSpinner.setAdapter(subjectSpinnerAdapter);
-
-    }
-
-    public void addListenerToSubjectSpinner() {
-
-        subjectSpinner = (Spinner) findViewById(R.id.spSubjectx);
-
-        subjectSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-                String itemSelectedInSpinner = parent.getItemAtPosition(pos).toString();
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-
-    }
-
-    public void addItemsToLocationSpinner() {
-
-        locationSpinner = (Spinner) findViewById(R.id.spLocationx);
-
-        ArrayAdapter<CharSequence> locationSpinnerAdapter = ArrayAdapter.createFromResource(this,
-                R.array.locations,
-                android.R.layout.simple_spinner_item);
-
-        locationSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        locationSpinner.setAdapter(locationSpinnerAdapter);
-
-    }
-
-    public void addListenerToLocationSpinner() {
-
-        locationSpinner = (Spinner) findViewById(R.id.spLocationx);
-
-        locationSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-                String itemSelectedInSpinner = parent.getItemAtPosition(pos).toString();
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-
-    }
+    // *********************************************************************************************
+    // ISLEVSIZLIK ENDS HERE
+    // *********************************************************************************************
 }

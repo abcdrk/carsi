@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        app:titleTextColor="@android:color/white">
+        app:titleTextColor="@android:color/white"
+        >
 
         <TextView
             android:id="@+id/toolbar_title"
@@ -28,6 +29,12 @@
 
     </android.support.v7.widget.Toolbar>
 
+    <ListView
+        android:id="@+id/main_list"
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_navigation"

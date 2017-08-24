@@ -2,9 +2,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/miFav"
+        android:id="@+id/miSettings"
         android:icon="@drawable/ic_action_settings"
         app:showAsAction="ifRoom"
+        android:title="Compose"
+        >
+    </item>
+
+    <item
+        android:id="@+id/miBackFromProfile"
+        android:icon="@drawable/ic_left_arrow"
+        app:showAsAction="always"
         android:title="Compose">
     </item>
 

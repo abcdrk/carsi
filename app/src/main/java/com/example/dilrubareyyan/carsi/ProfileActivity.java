@@ -21,6 +21,8 @@ public class ProfileActivity extends AppCompatActivity {
 
         // Remove default title text
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+        //Back to home icon
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         // Get access to the custom title view
         TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
 
