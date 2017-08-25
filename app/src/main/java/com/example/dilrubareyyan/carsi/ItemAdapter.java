@@ -73,7 +73,7 @@ public class ItemAdapter extends BaseAdapter {
         supplierView.setText(item.getSupplier());
 
         if (item.getHasPhoto()) {
-            imageView.setImageResource(R.drawable.ic_mail_inbox_empty);
+            imageView.setImageResource(R.drawable.ic_android_black_24dp);
         }
         else {
             imageView.setImageResource(R.drawable.ic_deal);

@@ -1,11 +1,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal" >
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="1">
 
     <ImageView
         android:id="@+id/itemPhoto"
+        android:src="@drawable/ic_deal"
         android:padding="8dp"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -16,10 +18,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:layout_weight="0.9">
 
         <TextView
             android:paddingLeft="8dp"
+            android:text="header"
             android:id="@+id/itemHeader"
             android:textStyle="bold"
             android:layout_width="wrap_content"
@@ -28,6 +32,8 @@
 
         <TextView
             android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="explanation"
             android:id="@+id/itemSupplier"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -37,12 +43,14 @@
 
     <TextView
         android:id="@+id/itemPrice"
+        android:text="the price"
         android:paddingLeft="15dp"
         android:textStyle="bold"
         android:textColor="@color/colorLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="right"/>
+        android:layout_alignParentRight="true"
+        android:layout_gravity="end"/>
 
 
 </LinearLayout>

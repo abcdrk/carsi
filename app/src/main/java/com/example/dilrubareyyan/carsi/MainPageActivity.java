@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -31,7 +32,8 @@ public class MainPageActivity extends AppCompatActivity {
         setContentView(R.layout.main_page);
 
         final ListView mainList = (ListView) findViewById(R.id.main_list);
-
+        final Button need = (Button) findViewById(R.id.need);
+        final Button surplus = (Button) findViewById(R.id.surplus);
 
         /**
          * Playing with ListView
@@ -111,21 +113,29 @@ public class MainPageActivity extends AppCompatActivity {
                             case R.id.action_eleman:
                                 mTitle.setText(R.string.header_eleman);
                                 mainList.setAdapter(adapter);
+                                need.setText("Eleman arıyorum");
+                                surplus.setText("Iş arıyorum.");
                                 break;
 
                             case R.id.action_nakliye:
                                 mTitle.setText(R.string.header_nakliye);
                                 mainList.setAdapter(adapter2);
+                                need.setText("Nakliyeci Arıyorum");
+                                surplus.setText("Nakliye yapıyorum");
                                 break;
 
                             case R.id.action_urun:
                                 mTitle.setText(R.string.header_urun);
                                 mainList.setAdapter(adapter);
+                                need.setText("Ürün arıyorum");
+                                surplus.setText("Ürün satıyorum.");
                                 break;
 
                             case R.id.action_depo:
                                 mTitle.setText(R.string.header_depo);
                                 mainList.setAdapter(adapter2);
+                                need.setText("Depo Arıyorum");
+                                surplus.setText("Depo kiralıyorum.");
                                 break;
 
                             case R.id.action_profile:

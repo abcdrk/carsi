@@ -50,4 +50,16 @@
     <string name="istanbul">İstanbul</string>
 
 
+    <string name="need_eleman">Eleman arıyorum.</string>
+    <string name="need_urun">Ürün ihtiyacım var.</string>
+    <string name="need_depo">Depo arıyorum.</string>
+    <string name="need_nakliye">Nakliye ihtiyacım var.</string>
+    <string name="surplus_eleman">İş arıyorum.</string>
+    <string name="surplus_urun">Ürün satıyorum.</string>
+    <string name="surplus_depo">Depo kiralıyorum.</string>
+    <string name="surplus_nakliye">Nakliye sağlıyorum.</string>
+
+
+
+
 </resources>

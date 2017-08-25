@@ -29,9 +29,47 @@
 
     </android.support.v7.widget.Toolbar>
 
+    <LinearLayout
+        android:id="@+id/need_surplus"
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        android:background="@color/colorWhite"
+        android:padding="0dp"
+        android:layout_margin="0dp">
+
+        <Button
+            android:layout_below="@id/toolbar"
+            android:layout_marginRight="1dp"
+            android:id="@+id/need"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:text="@string/need_eleman"
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorPrimary" />
+
+        <Button
+            android:layout_below="@id/toolbar"
+            android:layout_marginLeft="1dp"
+            android:id="@+id/surplus"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:text="@string/surplus_eleman"
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorPrimary"/>
+
+    </LinearLayout>
+
     <ListView
         android:id="@+id/main_list"
-        android:layout_below="@id/toolbar"
+        android:layout_below="@id/need_surplus"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
