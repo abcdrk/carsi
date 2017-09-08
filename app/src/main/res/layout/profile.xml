@@ -13,7 +13,15 @@
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        app:titleTextColor="@android:color/white">
+        app:titleTextColor="@android:color/white"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/btnProfileBackx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_left_arrow"
+            android:background="@android:color/transparent" />
 
         <TextView
             android:id="@+id/toolbar_title"
@@ -26,21 +34,46 @@
             android:layout_gravity="center"
             />
 
+
+
+        <Button
+            android:id="@+id/btnSettingsx"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:drawableRight="@drawable/ic_action_settings"
+            android:background="@android:color/transparent"
+            android:layout_gravity="right"
+            android:layout_weight="0.15" />
+
+        <Button
+            android:id="@+id/btnMyListx"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:drawableRight="@drawable/ic_action_my_list"
+            android:background="@android:color/transparent"
+            android:layout_gravity="right"/>
+
+
+
     </android.support.v7.widget.Toolbar>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
+
+    <ImageView
+        android:id="@+id/ivProfilePhotox"
+        android:paddingTop="30dp"
+        android:paddingLeft="30dp"
+        android:gravity="left"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        app:srcCompat="@drawable/ic_launcher" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="45sp"
-        android:text="hoo
-"
-        />
+        android:text="hoo" />
 
 </LinearLayout>

@@ -10,4 +10,5 @@
     <color name="colorFacebook">#3b5998</color>
     <color name="colorDarkGray">#514f4f</color>
     <color name="colorLink">#500404</color>
+    <color name="colorBlack">#000000</color>
 </resources>

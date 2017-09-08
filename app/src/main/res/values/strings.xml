@@ -59,7 +59,8 @@
     <string name="surplus_depo">Depo kiralıyorum.</string>
     <string name="surplus_nakliye">Nakliye sağlıyorum.</string>
 
-
+    <string name="myList">Benim İlanlarım</string>
+    <string name="settings">Ayarlar</string>
 
 
 </resources>

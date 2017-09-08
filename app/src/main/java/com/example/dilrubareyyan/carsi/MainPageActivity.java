@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -69,6 +70,14 @@ public class MainPageActivity extends AppCompatActivity {
         items2.add(new Item("olacak",true,"Yılmaz Tekstil",123.40));
         items2.add(new Item("olacak",true,"Yılmaz Tekstil",942.00));
         items2.add(new Item("olacak",true,"Yılmaz Tekstil",55.55));
+        items2.add(new Item("Emirin tbaletine yukledik",true,"Emir Tekstil",300.00));
+        items2.add(new Item("Emirin tbaletine yukledik",true,"Emir Tekstil",300.00));
+        items2.add(new Item("Emirin tbaletine yukledik",true,"Emir Tekstil",300.00));
+        items2.add(new Item("Emirin tbaletine yukledik",true,"Emir Tekstil",300.00));
+        items2.add(new Item("Emirin tbaletine yukledik",true,"Emir Tekstil",300.00));
+        items2.add(new Item("Emirin tbaletine yukledik",true,"Emir Tekstil",300.00));
+        items2.add(new Item("Emirin tbaletine yukledik",true,"Emir Tekstil",300.00));
+        items2.add(new Item("Emirin tbaletine yukledik",true,"Emir Tekstil",300.00));
 
 
 
@@ -122,6 +131,14 @@ public class MainPageActivity extends AppCompatActivity {
                                 mainList.setAdapter(adapter2);
                                 need.setText("Nakliyeci Arıyorum");
                                 surplus.setText("Nakliye yapıyorum");
+
+                                need.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+
+                                    }
+                                });
+                                
                                 break;
 
                             case R.id.action_urun:
