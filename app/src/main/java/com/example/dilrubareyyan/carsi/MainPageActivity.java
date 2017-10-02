@@ -2,6 +2,7 @@ package com.example.dilrubareyyan.carsi;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -12,6 +13,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,8 +33,8 @@ import static com.example.dilrubareyyan.carsi.R.menu.menu_main;
 public class MainPageActivity extends AppCompatActivity {
 
 
-
-    final public static List<Item> items = new ArrayList<Item>();
+    final public static int ADD_ITEM_ACTIVITY_REQUEST_CODE = 1;
+    public List<Item> items = new ArrayList<Item>();
     final public List<Item> items2 = new ArrayList<Item>();
     final public List<Item> items3 = new ArrayList<Item>();
     final List<Item> items4 = new ArrayList<Item>();
@@ -40,7 +42,8 @@ public class MainPageActivity extends AppCompatActivity {
     final List<Item> items6 = new ArrayList<Item>();
     final List<Item> items7 = new ArrayList<Item>();
     final List<Item> items8 = new ArrayList<Item>();
-
+    ItemAdapter adapter;
+    ListView mainList;
     // Converts array-string to ArrayList<String>
     // List<String> Lines = Arrays.asList(getResources().getStringArray(R.array.subjects));
 
@@ -51,7 +54,7 @@ public class MainPageActivity extends AppCompatActivity {
         setContentView(R.layout.main_page);
 
 
-        final ListView mainList = (ListView) findViewById(R.id.main_list);
+        mainList = (ListView) findViewById(R.id.main_list);
         final Button need = (Button) findViewById(R.id.need);
         final Button surplus = (Button) findViewById(R.id.surplus);
 
@@ -113,19 +116,11 @@ public class MainPageActivity extends AppCompatActivity {
         final TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
 
 
-//        Button btnAddItm = (Button) findViewById(R.id.btnAddItem);
-//
-//        btnAddItm.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent add = new Intent(MainPageActivity.this, AddItemActivity.class);
-//                startActivity(add);
-//            }
-//        });
+
 
 
         // Setting the ArrayList adapters.
-        final ItemAdapter adapter = new ItemAdapter(this, items, getApplicationContext());
+        adapter = new ItemAdapter(this, items, getApplicationContext());
         final ItemAdapter adapter2 = new ItemAdapter(this, items2, getApplicationContext());
         final ItemAdapter adapter3 = new ItemAdapter(this, items3, getApplicationContext());
         final ItemAdapter adapter4 = new ItemAdapter(this, items4, getApplicationContext());
@@ -138,6 +133,17 @@ public class MainPageActivity extends AppCompatActivity {
         mTitle.setText(R.string.header_eleman);
 
         mainList.setAdapter(adapter);
+
+
+        Button btnAddItm = (Button) findViewById(R.id.btnAddItem);
+
+        btnAddItm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent add = new Intent(MainPageActivity.this, AddItemActivity.class);
+                startActivityForResult(add, ADD_ITEM_ACTIVITY_REQUEST_CODE);
+            }
+        });
 
 
 
@@ -260,5 +266,30 @@ public class MainPageActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(menu_main, menu);
         return true;
+    }
+
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        items = new ArrayList<>();
+//    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch(requestCode) {
+            case ADD_ITEM_ACTIVITY_REQUEST_CODE: {
+                if (resultCode == Activity.RESULT_OK) {
+                    String header = data.getStringExtra("header");
+                    String price = data.getStringExtra("price");
+                    String supplier = data.getStringExtra("supplier");
+                    String location = data.getStringExtra("location");
+
+                    adapter.addItem(new Item(header, supplier, price, location, "Tekstil"));
+                    Log.d("ben", header);
+                    adapter.notifyDataSetChanged();
+                }
+                break;
+            }
+        }
     }
 }

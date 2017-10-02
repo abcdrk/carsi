@@ -18,7 +18,10 @@ public class User {
         this.name = name;
     }
 
-//    public User(String email, String name, String username) {
+    public User() {
+    }
+
+    //    public User(String email, String name, String username) {
 //        this.email = email;
 //        this.name = name;
 //        this.username = username;

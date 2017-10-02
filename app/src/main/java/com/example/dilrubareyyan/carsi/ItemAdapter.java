@@ -26,8 +26,6 @@ public class ItemAdapter extends BaseAdapter {
     LinearLayout list_item;
     private LayoutInflater mInflater;
     private List<Item> mItemList;
-    String[] names={"Michael Carrick","Diego Costa","Ander Herera","Juan Mata","Oscar","Aaron Ramsey","Wayne Rooney","Alexis Sanchez","Van Persie"};
-    String[] goals={"3","25","9","11","9","11","14","18","13"};
 
     public ItemAdapter(Activity activity, List<Item> items, Context context) {
 
@@ -45,6 +43,10 @@ public class ItemAdapter extends BaseAdapter {
     public ItemAdapter(Context ctx) {
         // TODO Auto-generated constructor stub
         this.context=ctx;
+    }
+
+    public void addItem(Item item) {
+        this.mItemList.add(0, item);
     }
 
     @Override
@@ -70,7 +72,6 @@ public class ItemAdapter extends BaseAdapter {
         View row = convertView;
         if(row == null)
         {
-            row = mInflater.inflate(R.layout.list_item, null);
             row = mInflater.inflate(R.layout.list_item , parent , false);
         }
 
