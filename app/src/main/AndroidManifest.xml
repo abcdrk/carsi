@@ -23,7 +23,11 @@
         </activity>
 
         <activity android:name=".LoginActivity">
-            
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <activity
@@ -51,11 +55,15 @@
         </activity>
 
         <activity android:name=".InsideListActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        </activity>
+
+        <activity android:name=".MyFavsActivity">
+
+        </activity>
+
+        <activity android:name=".AddItemActivity">
+
         </activity>
 
 

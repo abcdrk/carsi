@@ -1,17 +1,26 @@
 package com.example.dilrubareyyan.carsi;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,72 +30,71 @@ import static com.example.dilrubareyyan.carsi.R.menu.menu_main;
 
 public class MainPageActivity extends AppCompatActivity {
 
-    final List<Item> items = new ArrayList<Item>();
-    final List<Item> items2 = new ArrayList<Item>();
+
+
+    final public static List<Item> items = new ArrayList<Item>();
+    final public List<Item> items2 = new ArrayList<Item>();
+    final public List<Item> items3 = new ArrayList<Item>();
+    final List<Item> items4 = new ArrayList<Item>();
+    final List<Item> items5 = new ArrayList<Item>();
+    final List<Item> items6 = new ArrayList<Item>();
+    final List<Item> items7 = new ArrayList<Item>();
+    final List<Item> items8 = new ArrayList<Item>();
 
     // Converts array-string to ArrayList<String>
     // List<String> Lines = Arrays.asList(getResources().getStringArray(R.array.subjects));
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_page);
 
+
         final ListView mainList = (ListView) findViewById(R.id.main_list);
         final Button need = (Button) findViewById(R.id.need);
         final Button surplus = (Button) findViewById(R.id.surplus);
 
+
+
         /**
          * Playing with ListView
          */
-        items.add(new Item("3 Günlük ihtiyaç, kolonya doldurumu!!", false,"Yılmaz Tekstil", 4.99));
-        items.add(new Item("Sanayiye kalifiye eleman lazim", true,"Yılmaz Tekstil",3.4));
-        items.add(new Item("Dugme dikecek eleman, evden is de alinir", true,"Yılmaz Tekstil",49.9));
-        items.add(new Item("Bagcilar merkez ayik olsun herkes!", false,"Yılmaz Tekstil",9.4));
-        items.add(new Item("Umraniyede depo bosaltma", true,"Yılmaz Tekstil",77.7));
-        items.add(new Item("Hali yikama uzun vadeli eleman",false,"Yılmaz Tekstil",90.45));
-        items.add(new Item("Oyuncak bebek saci yikama. 900 tl pesin.",false,"Yılmaz Tekstil",56.77));
-        items.add(new Item("3 Günlük ihtiyaç, kolonya doldurumu!!", false,"Yılmaz Tekstil",234.66));
-        items.add(new Item("Sanayiye kalifiye eleman lazim", true,"Yılmaz Tekstil",4888.55));
-        items.add(new Item("Dugme dikecek eleman, evden is de alinir", true,"Yılmaz Tekstil",4.67));
-        items.add(new Item("Bagcilar merkez ayik olsun herkes!", false,"Yılmaz Tekstil",94.00));
-        items.add(new Item("Bagcilar merkez ayik olsun herkes!", false,"Yılmaz Tekstil",94.00));
-        items.add(new Item("Bagcilar merkez ayik olsun herkes!", false,"Yılmaz Tekstil",94.00));
-        items.add(new Item("Bagcilar merkez ayik olsun herkes!", false,"Yılmaz Tekstil",94.00));
-        items.add(new Item("Bagcilar merkez ayik olsun herkes!", false,"Yılmaz Tekstil",94.00));
-        items.add(new Item("Bagcilar merkez ayik olsun herkes!", false,"Yılmaz Tekstil",94.00));
+        // ELEMAN
+        items.add(new Item("3 Günlük ihtiyaç, kolonya doldurumu!!", "Burcu", "550.00"));
+        items.add(new Item("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", "Dilruba Reyyan ", "550.00"));
+        items.add(new Item("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB", "Erenler Tekstil", "666.00"));
+        items.add(new Item("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC", "Haydi Gidelim", "643.00"));
+        items.add(new Item("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD", "Durmam buralarda ben", "109.00"));
+        items.add(new Item("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", "Dilruba Reyyan ", "550.00", "Bağcılar", "Tekstil"));
+        items.add(new Item("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB", "Erenler Tekstil", "666.00", "Gungoren", "Hirdavat"));
+        items.add(new Item("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC", "Haydi Gidelim", "643.00", "Etiler", "Tekstil"));
+        items.add(new Item("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD", "Durmam buralarda ben", "109.00", "Cengelköy", "Nakliye"));
+        items.add(new Item("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD", "Durmam buralarda ben", "109.00", "Cengelköy", "Nakliye"));
+        items.add(new Item("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD", "Durmam buralarda ben", "109.00", "Cengelköy", "Nakliye"));
+        items.add(new Item("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD", "Durmam buralarda ben", "109.00", "Cengelköy", "Nakliye"));
 
-        items2.add(new Item("HOOOOOO",false,"Yılmaz Tekstil",4.00));
-        items2.add(new Item("HOOoooooOOOO",false,"Yılmaz Tekstil",4.99));
-        items2.add(new Item("HOOOOOO",false,"Yılmaz Tekstil",90.4));
-        items2.add(new Item("HOOOoooooOOO",false,"Yılmaz Tekstil",74.88));
-        items2.add(new Item("HOOOOOO",false,"Yılmaz Tekstil",345.45));
-        items2.add(new Item("olacak",true,"Yılmaz Tekstil",58.60));
-        items2.add(new Item("olacak",true,"Yılmaz Tekstil",567.90));
-        items2.add(new Item("olacak",true,"Yılmaz Tekstil",45.80));
-        items2.add(new Item("olacak",true,"Yılmaz Tekstil",885.00));
-        items2.add(new Item("olacak",true,"Yılmaz Tekstil",444.40));
-        items2.add(new Item("olacak",true,"Yılmaz Tekstil",50.40));
-        items2.add(new Item("olacak",true,"Yılmaz Tekstil",123.40));
-        items2.add(new Item("olacak",true,"Yılmaz Tekstil",942.00));
-        items2.add(new Item("olacak",true,"Yılmaz Tekstil",55.55));
-        items2.add(new Item("Emirin tbaletine yukledik",true,"Emir Tekstil",300.00));
-        items2.add(new Item("Emirin tbaletine yukledik",true,"Emir Tekstil",300.00));
-        items2.add(new Item("Emirin tbaletine yukledik",true,"Emir Tekstil",300.00));
-        items2.add(new Item("Emirin tbaletine yukledik",true,"Emir Tekstil",300.00));
-        items2.add(new Item("Emirin tbaletine yukledik",true,"Emir Tekstil",300.00));
-        items2.add(new Item("Emirin tbaletine yukledik",true,"Emir Tekstil",300.00));
-        items2.add(new Item("Emirin tbaletine yukledik",true,"Emir Tekstil",300.00));
-        items2.add(new Item("Emirin tbaletine yukledik",true,"Emir Tekstil",300.00));
+        items2.add(new Item("3 Günlük ihtiyaç, kolonya doldurumu!!", "Yılmaz Tekstil", "350.00"));
+
+        // URUN FAZLA
+        items3.add(new Item("3 Günlük ihtiyaç, kolonya doldurumu!!", "Yılmaz Tekstil", "350.00"));
+
+        items4.add(new Item("3 Günlük ihtiyaç, kolonya doldurumu!!", "Yılmaz Tekstil", "350.00"));
 
 
+        // NAKLIYE IHTIYAC
+        items6.add(new Item("3 Günlük ihtiyaç, kolonya doldurumu!!", "Yılmaz Tekstil", "350.00"));
 
-        // Setting the ArrayList adapters.
-        final ItemAdapter adapter = new ItemAdapter(this, items);
-        final ItemAdapter adapter2 = new ItemAdapter(this, items2);
+        // NAKLIYE VERECEK
+        items5.add(new Item("3 Günlük ihtiyaç, kolonya doldurumu!!", "Yılmaz Tekstil", "350.00"));
 
-        // Default display Eleman.
-        mainList.setAdapter(adapter);
+        // DEPO FAZLA
+        items7.add(new Item("3 Günlük ihtiyaç, kolonya doldurumu!!", "Yılmaz Tekstil", "350.00"));
+
+        // DEPO IHTIYAC
+        items8.add(new Item("3 Günlük ihtiyaç, kolonya doldurumu!!", "Yılmaz Tekstil", "350.00"));
+
+
 
 
         /**
@@ -104,8 +112,33 @@ public class MainPageActivity extends AppCompatActivity {
         // Get access to the custom title view
         final TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
 
+
+//        Button btnAddItm = (Button) findViewById(R.id.btnAddItem);
+//
+//        btnAddItm.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent add = new Intent(MainPageActivity.this, AddItemActivity.class);
+//                startActivity(add);
+//            }
+//        });
+
+
+        // Setting the ArrayList adapters.
+        final ItemAdapter adapter = new ItemAdapter(this, items, getApplicationContext());
+        final ItemAdapter adapter2 = new ItemAdapter(this, items2, getApplicationContext());
+        final ItemAdapter adapter3 = new ItemAdapter(this, items3, getApplicationContext());
+        final ItemAdapter adapter4 = new ItemAdapter(this, items4, getApplicationContext());
+        final ItemAdapter adapter5 = new ItemAdapter(this, items5, getApplicationContext());
+        final ItemAdapter adapter6 = new ItemAdapter(this, items6, getApplicationContext());
+        final ItemAdapter adapter7 = new ItemAdapter(this, items7, getApplicationContext());
+        final ItemAdapter adapter8 = new ItemAdapter(this, items8, getApplicationContext());
+
         // The Eleman Page is introduced first.
         mTitle.setText(R.string.header_eleman);
+
+        mainList.setAdapter(adapter);
+
 
 
         /**
@@ -123,36 +156,87 @@ public class MainPageActivity extends AppCompatActivity {
                                 mTitle.setText(R.string.header_eleman);
                                 mainList.setAdapter(adapter);
                                 need.setText("Eleman arıyorum");
-                                surplus.setText("Iş arıyorum.");
+                                surplus.setText("Iş arıyorum");
+
+                                need.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        mainList.setAdapter(adapter);
+                                    }
+                                });
+
+                                surplus.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        mainList.setAdapter(adapter2);
+                                    }
+                                });
+
                                 break;
 
                             case R.id.action_nakliye:
                                 mTitle.setText(R.string.header_nakliye);
-                                mainList.setAdapter(adapter2);
-                                need.setText("Nakliyeci Arıyorum");
+                                mainList.setAdapter(adapter6);
+                                need.setText("Nakliyeci arıyorum");
                                 surplus.setText("Nakliye yapıyorum");
 
                                 need.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
-
+                                        mainList.setAdapter(adapter6);
                                     }
                                 });
-                                
+
+                                surplus.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        mainList.setAdapter(adapter5);
+                                    }
+                                });
+
                                 break;
 
                             case R.id.action_urun:
                                 mTitle.setText(R.string.header_urun);
-                                mainList.setAdapter(adapter);
+                                mainList.setAdapter(adapter3);
                                 need.setText("Ürün arıyorum");
-                                surplus.setText("Ürün satıyorum.");
+                                surplus.setText("Ürün satıyorum");
+
+                                need.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        mainList.setAdapter(adapter3);
+                                    }
+                                });
+
+                                surplus.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        mainList.setAdapter(adapter4);
+                                    }
+                                });
+
                                 break;
 
                             case R.id.action_depo:
                                 mTitle.setText(R.string.header_depo);
-                                mainList.setAdapter(adapter2);
-                                need.setText("Depo Arıyorum");
-                                surplus.setText("Depo kiralıyorum.");
+                                mainList.setAdapter(adapter7);
+                                need.setText("Depo arıyorum");
+                                surplus.setText("Depo kiralıyorum");
+                                need.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        mainList.setAdapter(adapter7);
+                                    }
+                                });
+
+                                surplus.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        mainList.setAdapter(adapter8);
+                                    }
+                                });
+
                                 break;
 
                             case R.id.action_profile:

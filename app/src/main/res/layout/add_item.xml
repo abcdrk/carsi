@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/colorBlack"
+        android:text="Firma Adı:"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/et1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Firma/Kişi adınızı giriniz"
+        android:textSize="15sp"/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/colorBlack"
+        android:text="Başlık:"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+    <EditText
+        android:id="@+id/et2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ana listede görünecek başlığı giriniz"
+        android:textSize="15sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/colorBlack"
+        android:text="Açıklama:"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+    <EditText
+        android:id="@+id/et3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Bu alana ilan detaylarını girebilirsiniz"
+        android:textSize="15sp"
+        android:layout_weight="0.45"
+        android:textAlignment="textStart"/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/colorBlack"
+        android:text="Lokasyon:"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+    <EditText
+        android:id="@+id/et4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Çalıştığınız bölgeyi giriniz"
+        android:textSize="15sp"/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/colorBlack"
+        android:text="Ücret:"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+    <EditText
+        android:id="@+id/et5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Verilecek/Alınacak ortalama ücreti giriniz"
+        android:textSize="15sp"/>
+
+
+    <Button
+        android:id="@+id/btnAddComplete"
+        android:layout_margin="20dp"
+        android:background="@drawable/round"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorText"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="İlan Ekle"
+        android:textAllCaps="false"/>
+
+</LinearLayout>

@@ -28,6 +28,10 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'io.apptik.widget:multiselectspinner:1.0.12'
     compile 'com.android.support:design:26.+'
+    compile 'com.google.firebase:firebase-auth:11.0.0'
+    compile 'com.google.firebase:firebase-database:11.0.0'
+
 
     testCompile 'junit:junit:4.12'
 }
+apply plugin: 'com.google.gms.google-services'

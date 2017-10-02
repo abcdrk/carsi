@@ -15,7 +15,7 @@ import java.util.List;
  */
 
 
-public class MyListActivity extends Activity {
+public class MyFavsActivity extends Activity {
 
     final List<Item> items3 = new ArrayList<Item>();
 
@@ -25,7 +25,7 @@ public class MyListActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.my_list);
+        setContentView(R.layout.my_favs);
 
         Button btnBackMyList = (Button) findViewById(R.id.btnMyListBackx);
 
@@ -33,7 +33,7 @@ public class MyListActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                Intent goBack = new Intent(MyListActivity.this, ProfileActivity.class);
+                Intent goBack = new Intent(MyFavsActivity.this, ProfileActivity.class);
                 startActivity(goBack);
             }
         });

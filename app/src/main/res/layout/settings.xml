@@ -38,6 +38,21 @@
 
     </android.support.v7.widget.Toolbar>
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/btnLogOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:background="@drawable/btn_login"
+        android:text="LOG OUT"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
 
 
 </LinearLayout>

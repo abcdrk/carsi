@@ -26,7 +26,7 @@
         android:layout_weight="0.08" />
 
     <EditText
-        android:id="@+id/etUserNamex"
+        android:id="@+id/etUserMailx"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.04"
@@ -37,7 +37,7 @@
         android:textColorHint="@color/colorText"
         android:textStyle="bold"
         android:inputType="textPersonName"
-        android:hint="@string/user_name"
+        android:hint="@string/e_mail"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:backgroundTint="@color/colorText" />
@@ -147,5 +147,12 @@
 
     </LinearLayout>
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone" />
 
 </LinearLayout>

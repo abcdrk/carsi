@@ -1,15 +1,20 @@
 package com.example.dilrubareyyan.carsi;
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.TextView;
+        import android.app.Activity;
+        import android.content.ContentValues;
+        import android.content.Context;
+        import android.content.Intent;
+        import android.os.Bundle;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.BaseAdapter;
+        import android.widget.Button;
+        import android.widget.ImageView;
+        import android.widget.LinearLayout;
+        import android.widget.TextView;
 
-import java.util.List;
+        import java.util.List;
 
 /**
  * Created by dilrubareyyan on 24/08/17.
@@ -17,10 +22,16 @@ import java.util.List;
 
 public class ItemAdapter extends BaseAdapter {
 
+    Context context;
+    LinearLayout list_item;
     private LayoutInflater mInflater;
     private List<Item> mItemList;
+    String[] names={"Michael Carrick","Diego Costa","Ander Herera","Juan Mata","Oscar","Aaron Ramsey","Wayne Rooney","Alexis Sanchez","Van Persie"};
+    String[] goals={"3","25","9","11","9","11","14","18","13"};
 
-    public ItemAdapter(Activity activity, List<Item> items) {
+    public ItemAdapter(Activity activity, List<Item> items, Context context) {
+
+
 
         //XML'i alıp View'a çevirecek inflater'ı örnekleyelim
         mInflater = (LayoutInflater) activity.getSystemService(
@@ -28,6 +39,12 @@ public class ItemAdapter extends BaseAdapter {
 
         //gösterilecek listeyi de alalım
         mItemList = items;
+        this.context = context;
+    }
+
+    public ItemAdapter(Context ctx) {
+        // TODO Auto-generated constructor stub
+        this.context=ctx;
     }
 
     @Override
@@ -48,36 +65,67 @@ public class ItemAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View itemView;
 
-        itemView = mInflater.inflate(R.layout.list_item, null);
+
+        View row = convertView;
+        if(row == null)
+        {
+            row = mInflater.inflate(R.layout.list_item, null);
+            row = mInflater.inflate(R.layout.list_item , parent , false);
+        }
 
         TextView headerView =
-                (TextView) itemView.findViewById(R.id.itemHeader);
+                (TextView) row.findViewById(R.id.itemHeader);
 
         TextView supplierView =
-                (TextView) itemView.findViewById(R.id.itemSupplier);
+                (TextView) row.findViewById(R.id.itemSupplier);
 
         TextView priceView =
-                (TextView) itemView.findViewById(R.id.itemPrice);
+                (TextView) row.findViewById(R.id.itemPrice);
 
         ImageView imageView =
-                (ImageView) itemView.findViewById(R.id.itemPhoto);
+                (ImageView) row.findViewById(R.id.itemPhoto);
 
+        LinearLayout ly = (LinearLayout) row.findViewById(R.id.list_item_layout);
 
-
-        Item item = mItemList.get(position);
+        final Item item = mItemList.get(position);
 
         headerView.setText(item.getHeader());
         priceView.setText("" + item.getPrice() + " tl");
         supplierView.setText(item.getSupplier());
 
-        if (item.getHasPhoto()) {
-            imageView.setImageResource(R.drawable.ic_box);
-        }
-        else {
-            imageView.setImageResource(R.drawable.ic_basket);
-        }
-        return itemView;
+        imageView.setImageResource(R.drawable.ic_box);
+
+
+        ly.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle kutu = new Bundle();
+                kutu.putString("header", item.getHeader());
+                kutu.putString("price", item.getPrice());
+                kutu.putString("supplier", item.getSupplier());
+                kutu.putString("location", item.getLocation());
+
+                Intent intent = new Intent(context, InsideListActivity.class);
+                intent.putExtras(kutu);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
+
+//        row.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent createAccount = new Intent(activity, InsideListItemActivity.class);
+//                startActivity(createAccount);
+//            }
+//        });
+
+        return row;
+
     }
+
 }
+
+
+

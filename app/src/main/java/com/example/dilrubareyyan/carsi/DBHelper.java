@@ -13,11 +13,11 @@ import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    private static final String DATAMASE_NAME = "dilrubareyyanDB";
-    private static final String TABLE_NAME = "countries";
+    private static final String DATABASE_NAME = "dilrubareyyanDB";
+    private static final String TABLE_NAME = "ilanlar";
 
     public DBHelper(Context context){
-        super(context, DATAMASE_NAME, null, 1);
+        super(context, DATABASE_NAME, null, 1);
     }
 
     public DBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -30,7 +30,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String sql = "CREATE TABLE " +  TABLE_NAME + " (id INTEGER PRIMARY KEY, country_name TEXT ) " ;
+        String sql = "CREATE TABLE " +  TABLE_NAME + " (id INTEGER PRIMARY KEY, explanation TEXT, price INTEGER ) " ;
         sqLiteDatabase.execSQL(sql);
     }
 
@@ -41,11 +41,12 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    public void insertCountry(String name){
+    public void insertIlan(String exp, int price){
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put("country_name",name);
+        values.put("explanation",exp);
+        values.put("price",price);
 
         db.insert(TABLE_NAME, null, values);
 
@@ -53,16 +54,16 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public List<String> getAllCountries(){
+    public List<String> getAllIlanlar(){
         SQLiteDatabase db = this.getReadableDatabase();
-        List<String> countryList = new ArrayList<>();
+        List<String> ilanList = new ArrayList<>();
 
-        Cursor cursor = db.query(TABLE_NAME, new String[]{"id","country_name"}, null, null, null, null, null);
+        Cursor cursor = db.query(TABLE_NAME, new String[]{"id","explenation","price"}, null, null, null, null, null);
 
         while(cursor.moveToNext()){
-            countryList.add(cursor.getString(1));
+            ilanList.add(cursor.getString(1));
         }
 
-        return countryList;
+        return ilanList;
     }
 }

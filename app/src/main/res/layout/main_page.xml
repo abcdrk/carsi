@@ -27,6 +27,16 @@
             android:layout_gravity="start"
             />
 
+        <Button
+            android:id="@+id/btnAddItem"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:drawableRight="@drawable/ic_plus"
+            android:background="@android:color/transparent"
+            android:layout_gravity="right"
+            android:layout_weight="0.15" />
+
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout

@@ -14,6 +14,7 @@
 
     <Button
         android:id="@+id/btnBack2x"
+        android:layout_marginLeft="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="textStart"
@@ -38,7 +39,7 @@
         android:ems="10"
         android:textColor="@color/colorBlack"
         android:text="Yılmaz Tekstil"
-        android:textSize="23sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:gravity="center"/>
 
@@ -48,26 +49,14 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.1" />
 
-    <ImageSwitcher
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:padding="10dp">
 
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_basket" />
-
-        <ImageView
+    <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_deal" />
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_deal"
+        android:layout_gravity="center"/>
 
-
-    </ImageSwitcher>
 
     <Space
         android:layout_width="match_parent"
@@ -79,12 +68,11 @@
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="8dp"
+        android:padding="20dp"
         android:textSize="20sp"
         android:textColor="@color/colorBlack"
         android:layout_gravity="left"
-        android:text="1000 tane gömlek taşınacak, 2 gün için 1 adet kamyona ihtiyacımız var."/>
-
+        android:text="10.000 tane gömlek taşınacak, 2 gün için 1 adet kamyona ihtiyacımız var."/>
 
     <Space
         android:layout_width="match_parent"
@@ -96,11 +84,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:padding="8dp"
+        android:paddingLeft="15dp"
         android:gravity="right"
         android:textSize="20sp"
-        android:textColor="@color/colorBlack"
+        android:textColor="@color/colorDarkGray"
         android:text="Ücret: 250 tl"/>
+    <TextView
+        android:id="@+id/editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:paddingLeft="15dp"
+        android:gravity="right"
+        android:textSize="20sp"
+        android:textColor="@color/colorFacebook"
+        android:text="Lokasyon: Ümraniye"/>
 
     <Space
         android:layout_width="match_parent"
@@ -110,12 +108,13 @@
 
     <Button
         android:id="@+id/button1"
+        android:layout_margin="20dp"
         android:background="@drawable/round"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorText"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:text="ARA" />
+        android:text="NUMARAYI ARA" />
 
 </LinearLayout>

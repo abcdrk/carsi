@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -21,18 +22,15 @@ import java.util.List;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    Button btnLogOut, btnBackProfile, btnSettings, btnMyList, btnMyFavs;
+    Button btnBackProfile, btnSettings, btnMyList, btnMyFavs;
     TextView mTitle, tvName;
-    private FirebaseAuth mAuth;
+    FirebaseAuth mAuth;
     DatabaseReference dbRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
-
-        dbRef = FirebaseDatabase.getInstance().getReference("users");
-
 
         // BACK BUTTON
         btnBackProfile = (Button) findViewById(R.id.btnProfileBackx);
@@ -84,19 +82,6 @@ public class ProfileActivity extends AppCompatActivity {
         });
 
 
-        // LOGOUT BUTTON
-        btnLogOut = (Button) findViewById(R.id.btnLogOut);
-        mAuth = FirebaseAuth.getInstance();
-
-        btnLogOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mAuth.signOut();
-                Intent goBack = new Intent(ProfileActivity.this, LoginActivity.class);
-                startActivity(goBack);
-            }
-        });
-
         // Find the toolbar view inside the activity layout
         Toolbar toolbar = (Toolbar) findViewById(R.id.profile_toolbar);
 
@@ -109,32 +94,34 @@ public class ProfileActivity extends AppCompatActivity {
         //Back to home icon
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         // Get access to the custom title view
+
         mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
-        tvName = (TextView) findViewById(R.id.tvNamex);
 
         mTitle.setText(R.string.profile);
 
-    }
+        tvName = (TextView) findViewById(R.id.tvNamex);
 
-    private void saveUserInfo(String email, String name){
+        dbRef = FirebaseDatabase.getInstance().getReference("users");
 
+        mAuth = FirebaseAuth.getInstance();
         String userId = mAuth.getCurrentUser().getUid();
 
-        dbRef.child(userId).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String value = dataSnapshot.getValue(String.class);
-                tvName.setText(value);
-            }
+//        dbRef.child(userId).addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                User user = dataSnapshot.getValue(User.class);
+//                Log.v("HERE", user.getName());
+//
+//                tvName.setText(user.getName());
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
     }
-
-
 
 
 }

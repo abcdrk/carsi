@@ -9,12 +9,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.dilrubareyyan.carsi.R.id.btnLogOut;
 
 
 public class SettingsActivity extends AppCompatActivity {
 
+
+    Button btnLogOut;
+    private FirebaseAuth mAuth;
 
     final List<Item> items3 = new ArrayList<Item>();
 
@@ -40,6 +47,8 @@ public class SettingsActivity extends AppCompatActivity {
 
 
 
+
+
         // Find the toolbar view inside the activity layout
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
@@ -55,6 +64,20 @@ public class SettingsActivity extends AppCompatActivity {
         TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title_settings);
 
         mTitle.setText(R.string.settings);
+
+
+        btnLogOut = (Button) findViewById(R.id.btnLogOut);
+
+        mAuth = FirebaseAuth.getInstance();
+
+        btnLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                Intent goBack = new Intent(SettingsActivity.this, LoginActivity.class);
+                startActivity(goBack);
+            }
+        });
 
     }
 
